@@ -1,5 +1,5 @@
 # tlb-prediction
-bm.sh contain script for collecting trace from and /sys/kernel/debug/trace
+script.sh contain script for collecting trace from and /sys/kernel/debug/trace
 
 graphs:
 
