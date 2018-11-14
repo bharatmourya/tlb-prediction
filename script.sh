@@ -3,13 +3,17 @@
 echo > /sys/kernel/debug/tracing/trace
 echo 1 > /sys/kernel/debug/tracing/events/tlb/enable
 echo 1 > /sys/kernel/debug/tracing/tracing_on
+echo > pbz-trace
 #echo > trace1198
 #echo > trace1199
 #echo > trace1200
 #strace -tt -fp 1198 -o trace1198&
 #strace -tt -fp 1199 -o trace1199&
 #strace -tt -fp 1200 -o trace1200&
-../tracing/wrk/./wrk -t6 -c400 http://127.0.0.1/
+#../tracing/wrk/./wrk -t6 -c400 http://127.0.0.1/
+tar -c ../parsec-2.1 | pbzip2 -c > parsec-2.1.tar.bz2&
+sleep 1
+strace -tt -fp $(pgrep pbzip2) -o pbz-trace
 echo 0 > /sys/kernel/debug/tracing/tracing_on
 pkill strace
 cp /sys/kernel/debug/tracing/trace /home/bharath/Desktop/remote1

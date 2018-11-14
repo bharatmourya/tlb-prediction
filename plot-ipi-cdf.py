@@ -81,7 +81,7 @@ import matplotlib.pyplot as plt
 print("Ploting graphs.... ")
 #plt.plot(list(list_count_shoot.keys()), list(list_count_shoot.values()) , label='Shootdowns')
 #plt.plot(list(list_count_ipi.keys()), list(list_count_ipi.values()) , label="IPI's")
-plt.plot(keys_shoot , values_shoot ,'-bo', label = "Shootdown")
+#plt.plot(keys_shoot , values_shoot ,'-bo', label = "Shootdown")
 plt.plot(keys_ipi , values_ipi ,'-ro', label = "IPI")
 plt.xlabel('Time normalized ('+str(flg_ipi) +')')
 plt.legend()
